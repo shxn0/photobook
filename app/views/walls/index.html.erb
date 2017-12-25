@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h1>walls#index</h1>
+    <div class="row col-md-8 col-md-offset-2">
+      <% if notice.nil? ==false %>
+        <div class="alert alert-success" role="alert">
+          <p class="flash"><%= notice %><%= alert %></p>
+        </div>
+      <% end %>
+    </div>
+    <br>
+
+  <div class= "wrap col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1" %>
+    <%= link_to "投稿する", new_wall_path, class:"btn btn-default btn-block "%>
+  </div>
+
+
+  <div class="row col-md-8 col-md-offset-2">
+    <div class="column" %>
+      <% @walls.each do |wall| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title"><strong><%= wall.title %></strong></div>
+        </div>
+        <div class="panel-body">
+          <%= wall.content %>
+          <div class ="icon"><%= link_to "Edit", edit_wall_path(wall.id), class: "btn btn-xs btn-info" %>
+          <%= link_to "Delete", wall_path(wall.id), method: :delete, class: "btn btn-xs btn-default" %></div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+  <%= link_to "top", root_path %>
+  </div>
+
+
+
+</div>

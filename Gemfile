@@ -49,3 +49,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 end
+
+gem 'twitter-bootstrap-rails'
+
+gem 'devise'
+
+group :development do
+  gem 'letter_opener_web'
+end
+
+gem 'faker'
