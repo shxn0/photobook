@@ -30,10 +30,12 @@ class WallsController < ApplicationController
   end
 
   def show
+    @comment = @wall.comments.build
+    @comments = @wall.comments
   end
 
   def destroy
-    @wall.destroy(walls_params)
+    @wall.destroy
     redirect_to walls_path, notice: "削除しました！"
   end
 

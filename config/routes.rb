@@ -1,13 +1,27 @@
 Rails.application.routes.draw do
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
-if Rails.env.development?
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
-end
+  # resources :walls, only:[:index, :new, :create, :edit, :show, :destroy, :update]
+  resources :walls do
+    resources :comments
+  end
+  root 'tops#index'
 
- devise_for :users
- resources :walls, only:[:index, :new, :create, :edit, :show, :destroy, :update]
- root 'tops#index'
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
+  resources :users, only:[:index, :show]
+
+  resources :relationships, only:[:create, :destroy]
+
+  resources :conversations do
+    resources :messages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

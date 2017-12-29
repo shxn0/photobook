@@ -14,18 +14,25 @@
     <%= link_to "投稿する", new_wall_path, class:"btn btn-default btn-block "%>
   </div>
 
-
   <div class="row col-md-8 col-md-offset-2">
     <div class="column" %>
       <% @walls.each do |wall| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="panel-title"><strong><%= wall.title %></strong></div>
+          <div class="panel-title">
+            <div class="profile"><%= profile_img(wall.user) %>
+              <%= link_to wall_path(wall) do %>
+            <strong><%= wall.title %></strong>
+            <% end %>
+            </div>
+          </div>
         </div>
         <div class="panel-body">
           <%= wall.content %>
-          <div class ="icon"><%= link_to "Edit", edit_wall_path(wall.id), class: "btn btn-xs btn-info" %>
-          <%= link_to "Delete", wall_path(wall.id), method: :delete, class: "btn btn-xs btn-default" %></div>
+          <% if wall.user.id == current_user.id %>
+            <div class ="icon"><%= link_to "Edit", edit_wall_path(wall.id), class: "btn btn-xs btn-info" %>
+            <%= link_to "Delete", wall_path(wall.id), method: :delete, class: "btn btn-xs btn-default" %></div>
+          <% end %>
         </div>
       </div>
     <% end %>

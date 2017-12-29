@@ -54,8 +54,26 @@ gem 'twitter-bootstrap-rails'
 
 gem 'devise'
 
+
 group :development do
   gem 'letter_opener_web'
 end
 
+# seedデータを作るため
 gem 'faker'
+
+# .envをどの環境からでも利用できるようにするため
+group :development do
+  gem 'dotenv-rails'
+end
+
+# SNSログイン実行のため
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+# 画像をアップロードするため
+gem 'carrierwave'
+
+# アップロードした画像ファイルのサイズを変更するため
+gem 'mini_magick'

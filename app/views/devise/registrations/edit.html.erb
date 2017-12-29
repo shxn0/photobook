@@ -12,6 +12,13 @@
         <%= f.email_field :email, autofocus: true, class:"form-control" %>
       </div>
 
+      <div class="field">
+        <% f.label :name %><br />
+        <% f.text_field :name, class:"form-control" %>
+      </div>
+
+    <% if @user.provider.blank? %>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
@@ -35,10 +42,16 @@
         <%= f.password_field :current_password, autocomplete: "off", class:"form-control"%>
       </div>
 
-<%# avatarの記述 %>
+    <% end %>
+
+      <div class="field">
+        <%= profile_img(@user) if profile_img(@user) %>
+        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache %>
+      </div>
 
       <div class="actions">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class: "btn btn-primary btn-block" %>
       </div>
     <% end %>
 

@@ -6,9 +6,11 @@ class NoticeMailer < ApplicationMailer
   #   en.notice_mailer.sendmail_wall.subject
   #
   def sendmail_wall(wall)
+
+    @wall = wall
     @greeting = "Hi"
 
     mail to: "pokopanic19@gmail.com",
       subject: '【Wall】投稿されました！'
-  ends
+  end
 end
