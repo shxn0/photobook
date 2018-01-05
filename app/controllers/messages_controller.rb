@@ -17,18 +17,20 @@ class MessagesController < ApplicationController
       @messages = @conversation.messages
     end
 
-    if @message.last
-      if @message.last.user_id != current_user.id
+    if @messages.last
+      if @messages.last.user_id != current_user.id
         @messages.last.read = true
       end
     end
+
+    @message = @conversation.messages.build
 
   end
 
 
 
   def create
-    @message = @conversation.messages.build(messages_params)
+    @message = @conversation.messages.build(message_params)
 
     if @message.save
       redirect_to conversation_messages_path(@conversation)
@@ -36,7 +38,8 @@ class MessagesController < ApplicationController
   end
 
   private
-    def messages_params
+  # User_idは送信者のIDが格納される
+    def message_params
       params.require(:message).permit(:body, :user_id)
     end
 
