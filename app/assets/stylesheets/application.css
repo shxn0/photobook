@@ -35,14 +35,16 @@
 
 .container {
   min-height: 100%;
+  padding-bottom: 20px;
 }
 
 
 footer {
   /*background-color:#2ecc87;*/
-  background-color:#F55747;
+  /*background-color:#F55747;*/
+  background-color:#5e2a58;
   color: white;
-  margin-top: 25px;
+
   padding-top: 20px;
   padding-bottom: 20px;
 }

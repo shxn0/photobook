@@ -1,13 +1,16 @@
-<div class="container">
-  <div class="row col-md-8 col-md-offset-2">
-    <% if notice.nil? ==false %>
-      <div class="alert alert-success" role="alert">
-        <p class="flash"><%= notice %><%= alert %></p>
-      </div>
-    <% end %>
-    <h1>Top#index</h1>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row col-md-8 col-md-offset-2">
+      <% if notice.nil? ==false %>
+        <div class="alert alert-success" role="alert">
+          <p class="flash"><%= notice %><%= alert %></p>
+        </div>
+      <% end %>
+      <h1>#Daynotes</h1>
+    </div>
     <div class= "wrap col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1" %>
-      <%= link_to "wall", walls_path, class:"btn btn-default btn-block" %>
+      <h2>Share your new dixcoversies</h2>
+      <a class="btn btn-primary btn-lg" href="/walls" role="button">Go to Wall »</a>
     </div>
   </div>
 </div>
