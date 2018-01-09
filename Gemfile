@@ -77,3 +77,5 @@ gem 'carrierwave'
 
 # アップロードした画像ファイルのサイズを変更するため
 gem 'mini_magick'
+
+gem 'faker'

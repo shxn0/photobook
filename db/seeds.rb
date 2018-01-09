@@ -6,18 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-=begin
-#シードデータ準備
 
-10.times do |n|
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(
-    email: email,
-    password: password,
-    password_confirmation: password,
-  )
 
-end
+  20.times do |n|
+    email = Faker::Internet.email
+    password = "password"
+    User.create!(
+      email: email,
+      password: password,
+      password_confirmation: password,
+    )
+  end
 
-=end
+  n = 1
+  while n <= 20
+    Wall.create!(
+      title: "title",
+      content: "content",
+      user_id: n
+    )
+  n = n + 1
+  end
