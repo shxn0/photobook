@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   #hostはawsのhttpsアドレスを記載
-  config.action_mailer.default_url_options = {host: '13.230.137.233'}
+  config.action_mailer.default_url_options = {host: 'http://13.230.137.233/'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
