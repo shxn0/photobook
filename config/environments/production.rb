@@ -65,13 +65,13 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   #hostはawsのhttpsアドレスを記載
-  config.action_mailer.default_url_options = {host: }
+  config.action_mailer.default_url_options = {host: '13.230.137.233'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWARD'],
     #AWSのIPアドレスを記載
-    domain: ""
+    domain: "13.230.137.233"
     address: "smtp.sendgrid.net",
     prot: 587,
     authentication: :plain,
