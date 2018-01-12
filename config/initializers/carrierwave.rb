@@ -7,6 +7,7 @@ CarrierWave.configure do |config|
       path_style:            true,
   }
 
+
   config.fog_public     = true
   config.fog_attributes = {'Cache-Control' => 'public, max-age=86400'}
 
