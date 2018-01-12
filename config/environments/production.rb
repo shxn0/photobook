@@ -71,7 +71,7 @@ Rails.application.configure do
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWARD'],
     #AWSのIPアドレスを記載
-    domain: "13.230.137.233"
+    domain: "13.230.137.233",
     address: "smtp.sendgrid.net",
     prot: 587,
     authentication: :plain,
