@@ -6,12 +6,27 @@
     margin-top: 30px;
   }
 
-  .jumbotron { background:url(NY.jpg) center no-repeat; background-size: cover;}
+  // .jumbotron { background: url("app/assets/images/NY.jpg") center no-repeat; background-size: cover;}
+  // .jumbotron { background-image: url("app/assets/images/NY.jpg") center no-repeat; background-size: cover;}
+  // .jumbotron { background-image: url(NY.jpg) center no-repeat; background-size: cover;}
+
+  // TODO ろーかるではうごく
+  // .jumbotron { background: url(NY.jpg) center no-repeat; background-size: cover;}
+
+  // .jumbotron {
+    // background-image: image-url(NY.jpg) center no-repeat;
+    // background-size: cover;
+    // min-height: 100%;
+    // margin-bottom: 0px;
+  // }
 
   .jumbotron {
+    background: url(NY.jpg) center no-repeat;
+    background-size: cover;
     min-height: 100%;
     margin-bottom: 0px;
   }
+
 
   h1 {
     color: #211917;
