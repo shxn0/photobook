@@ -11,19 +11,29 @@
   20.times do |n|
     email = Faker::Internet.email
     password = "password"
+    aa = Faker::Address.city
+    bb = Faker::Address.street_name
+
     User.create!(
       email: email,
       password: password,
       password_confirmation: password,
+      name: Faker::Name.name,
+      uid: aa,
+      provider: bb
     )
   end
 
-  n = 1
-  while n <= 20
+  i = 0
+  n = User.last.id
+
+  while i <= 20
     Wall.create!(
       title: "title",
       content: "content",
       user_id: n
     )
-  n = n + 1
+  n -= 1
+  i += 1
+
   end
