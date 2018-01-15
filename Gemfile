@@ -45,9 +45,10 @@ group :development do
   gem 'spring'
 end
 
+group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
-
+end
 
 gem 'twitter-bootstrap-rails'
 
