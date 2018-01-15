@@ -69,7 +69,7 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWARD'],
+    password: ENV['SENDGRID_PASSWORD'],
     #AWSのIPアドレスを記載
     domain: "13.230.137.233",
     address: "smtp.sendgrid.net",
@@ -77,10 +77,6 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
-
-
-
-
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
