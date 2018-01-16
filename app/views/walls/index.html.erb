@@ -31,7 +31,7 @@
           <%= wall.content %>
           <% if wall.user.id == current_user.id %>
             <div class ="icon"><%= link_to "Edit", edit_wall_path(wall.id), class: "btn btn-xs btn-info" %>
-            <%= link_to "Delete", wall_path(wall.id), method: :delete, class: "btn btn-xs btn-default" %></div>
+            <%= link_to "Delete", wall_path(wall.id), method: :delete, data: {confirm: "本当に削除してよいですか？"}, class: "btn btn-xs btn-default" %></div>
           <% end %>
         </div>
       </div>
